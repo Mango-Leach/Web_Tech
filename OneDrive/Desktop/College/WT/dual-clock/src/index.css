@@ -1,0 +1,90 @@
+/* ── Design Tokens ── */
+:root {
+  /* Colors – dark theme (default) */
+  --bg-page:       #0c0e14;
+  --bg-card:       #13161f;
+  --bg-card-inner: #0e1018;
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text-primary:   #edeae2;
+  --text-secondary: #8a8fa0;
+  --text-muted:     #4a4f60;
+
+  --accent:        #4f8ef7;
+  --accent-glow:   rgba(79, 142, 247, 0.35);
+  --accent-dim:    rgba(79, 142, 247, 0.12);
+
+  --second-hand:   #f74f7b;
+  --second-glow:   rgba(247, 79, 123, 0.5);
+
+  --tick-major:    rgba(237, 234, 226, 0.7);
+  --tick-minor:    rgba(237, 234, 226, 0.18);
+
+  --num-color:     rgba(237, 234, 226, 0.55);
+
+  --card-radius:   28px;
+  --card-shadow:   0 32px 64px -24px rgba(0, 0, 0, 0.7),
+                   0 0 0 0.5px var(--border);
+
+  --transition: 0.3s ease;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg-page:       #eae6dc;
+  --bg-card:       #f8f5ee;
+  --bg-card-inner: #eeead f;
+  --border:        rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  --text-primary:   #1a1c24;
+  --text-secondary: #5a5f70;
+  --text-muted:     #9a9faa;
+
+  --accent:        #2563eb;
+  --accent-glow:   rgba(37, 99, 235, 0.25);
+  --accent-dim:    rgba(37, 99, 235, 0.1);
+
+  --second-hand:   #e11d48;
+  --second-glow:   rgba(225, 29, 72, 0.4);
+
+  --tick-major:    rgba(26, 28, 36, 0.65);
+  --tick-minor:    rgba(26, 28, 36, 0.15);
+
+  --num-color:     rgba(26, 28, 36, 0.5);
+
+  --card-shadow:   0 24px 48px -16px rgba(0, 0, 0, 0.18),
+                   0 0 0 0.5px var(--border);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

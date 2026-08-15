@@ -1,0 +1,161 @@
+/* ── Page shell ── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Ambient dot-grid ── */
+.grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    var(--border) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Soft vignette over the grid */
+.grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    transparent 30%,
+    var(--bg-page) 80%
+  );
+}
+
+/* ── Header ── */
+.header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 24px 0;
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.wordmarkMain {
+  font-family: 'Orbitron', monospace;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.wordmarkSub {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  padding: 2px 8px;
+  border: 0.5px solid var(--accent);
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+/* ── Main content ── */
+.main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;            /* connector handles visual gap */
+  padding: 40px 20px 24px;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ── Visual connector between the two cards ── */
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.connectorLine {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--border-strong),
+    var(--accent)
+  );
+  opacity: 0.4;
+}
+
+.connectorLine:last-child {
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    var(--border-strong)
+  );
+}
+
+.connectorDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px 2px var(--accent-glow);
+  flex-shrink: 0;
+}
+
+/* ── Footer ── */
+.footer {
+  position: relative;
+  z-index: 1;
+  font-family: 'Orbitron', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .header {
+    padding-top: 20px;
+  }
+  .main {
+    padding-top: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

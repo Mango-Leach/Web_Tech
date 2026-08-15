@@ -1,0 +1,55 @@
+.card {
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 36px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 440px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 40px 80px -24px rgba(0, 0, 0, 0.6),
+    0 0 0 0.5px var(--border-strong),
+    0 0 40px -10px var(--accent-glow);
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.pip {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong));
+}
+
+.pip:last-child {
+  background: linear-gradient(90deg, var(--border-strong), transparent);
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

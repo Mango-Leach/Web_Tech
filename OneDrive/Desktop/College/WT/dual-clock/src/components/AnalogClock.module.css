@@ -1,0 +1,8 @@
+.svg {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  /* GPU layer — prevents jank on hand repaints */
+  will-change: contents;
+}

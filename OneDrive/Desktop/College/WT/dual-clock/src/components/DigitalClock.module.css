@@ -1,0 +1,115 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 8px 0;
+}
+
+/* ── Time row ── */
+.timeRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.hhmm {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(64px, 14vw, 96px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  /* Tabular numerals to prevent layout shift */
+  font-variant-numeric: tabular-nums;
+}
+
+.colon {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+  margin: 0 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding-bottom: 10px;
+}
+
+.ampm {
+  font-family: 'Orbitron', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.seconds {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-strong) 30%,
+    var(--accent) 50%,
+    var(--border-strong) 70%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* ── Date row ── */
+.dateRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dayName {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.dateStr {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* ── Timezone ── */
+.tz {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
